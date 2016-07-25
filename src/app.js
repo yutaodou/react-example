@@ -6,8 +6,7 @@ var Avartar = require('./avartar');
 
 USER_DATA = {
     username:"yutaodou",
-    image: "https://avatars3.githubusercontent.com/u/122233?v=3&s=460",
-    link:"https://github.com/yutaodou"
+    imageUrl: "https://avatars3.githubusercontent.com/u/122233?v=3&s=460"
 }
 
 setInterval(function(){

@@ -2,14 +2,30 @@ var React = require('react');
 
 var ProfilePhoto = React.createClass({
     render: function(){
-        return <img src={this.props.image} style= {{height:100, width:100}}/>;
+        return <img src={this.props.imageUrl} style= {{height:100, width:100}}/>;
+    }
+});
+
+var Link = React.createClass({
+    changeUrl: function(){
+        window.location.replace(this.props.href);
+    },
+
+    render: function(){
+        return (
+            <span style={{color:'blue', cursor:'pointer'}} onClick={this.changeUrl}>
+                {this.props.children}
+            </span>
+        );
     }
 });
 
 var ProfileLink = React.createClass({
     render: function(){
         return (
-            <div><a href="{this.props.link}">{this.props.link}</a></div>
+            <Link href={"http://www.github.com/"+this.props.username}>
+                {this.props.username}
+            </Link>
         );
     }
 });
@@ -26,9 +42,9 @@ var Avartar = React.createClass({
     render: function(){
         return (
             <div>
-                <ProfilePhoto image = {this.props.user.image} />
-                <ProfileLink link = {this.props.user.link} />
+                <ProfilePhoto imageUrl = {this.props.user.imageUrl} />
                 <ProfileName username = {this.props.user.username} />
+                <ProfileLink username= {this.props.user.username} />
             </div>
         );
     }
