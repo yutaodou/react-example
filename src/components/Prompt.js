@@ -2,6 +2,13 @@ var React = require('react');
 var background = require('../styles/index');
 
 var Prompt = React.createClass({
+    propTypes: {
+        header: React.PropTypes.string.isRequired,
+        onSubmitUser: React.PropTypes.func.isRequired,
+        onUpdateUser: React.PropTypes.func.isRequired,
+        username: React.PropTypes.string.isRequired
+    },
+
     render: function(){
         return (
             <div className = "jumbotron col-sm-6 col-sm-offset-3 text-center" style={background}>
